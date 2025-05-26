@@ -51,7 +51,7 @@ export class ScreenshotService {
     try {
       await this.keyboardService.takeScreenshot();
       
-      await this.delay(500);
+      await this.delay(1000);
 
       const screenshotPath = this.findScreenshotFile();
       
