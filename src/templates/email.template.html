@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .screenshot {
+            max-width: 100%;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .instructions {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .command-example {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .faq {
+            margin-top: 30px;
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+        }
+        .faq h4 {
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+        .faq p {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .processed-message {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>PostmarkGBA</h1>
+    
+    {{#processed}}
+    <div class="processed-message">
+        <p>Inputs processed, new emulator state:</p>
+    </div>
+    {{/processed}}
+    
+    {{#screenshot}}
+    <img src="{{url}}" alt="Current emulator state" class="screenshot">
+    {{/screenshot}}
+
+    <div class="instructions">
+        <h3>How to Control</h3>
+        <p>To control the emulator, reply to this email or send a new email with a maximum of three inputs, in order.</p>
+
+        <p>The following keys are available as input:</p>
+        <ul>
+            <li>UP, DOWN, LEFT, RIGHT - Direction controls</li>
+            <li>A, B - Action buttons</li>
+            <li>START, SELECT - Menu controls</li>
+            <li>L, R - Shoulder buttons</li>
+        </ul>
+        
+        <p>Example:</p>
+        <div class="command-example">
+            UP RIGHT A
+        </div>
+    </div>
+
+    <div class="faq">
+        <h3>Frequently Asked Questions</h3>
+        
+        <h4>What should I put in my email?</h4>
+        <p>Just the inputs, nothing else! We'll try to input everything until we find something we don't know.</p>
+        
+        <h4>Do I need to put it in upper/lowercase?</h4>
+        <p>Whatever you prefer. The emulator is case insensitive, so it doesn't matter.</p>
+
+        <h4>Can I add other text to my email?</h4>
+        <p>No, please don't add any additional text. The system only recognizes the input commands (UP, DOWN, A, B, etc.). Any other text might cause the command to fail.</p>
+
+        <h4>How do I format multiple commands?</h4>
+        <p>Simply put a space between each command. For example: "UP RIGHT A" will press Up, then Right, then A in sequence.</p>
+        
+        <h4>How many commands can I give?</h4>
+        <p>You can give a maximum of three commands per mail. Any more will be ignored.</p>
+
+        <h4>What if I just want to see the current state?</h4>
+        <p>You can just send an empty email. You will always get the current state.</p>
+    </div>
+    
+    <p>Have fun, I hope you enjoy! - Party Rens</p>
+
+</body>
+</html> 
